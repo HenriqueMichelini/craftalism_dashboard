@@ -1,0 +1,75 @@
+/* ==================== */
+/*      RADIO GROUP     */
+/* ==================== */
+.radio-group {
+    display: flex;
+    margin-top: 3rem;
+    gap: 20px;
+}
+
+.radio-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    transition: var(--transition);
+}
+
+.radio-item input[type="radio"] {
+    display: none;
+}
+
+.radio-icon {
+    size: 2rem;
+    transition: var(--transition);
+    color: var(--secondary-color);
+    align-self: center;
+}
+
+.radio-title {
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: var(--transition);
+    margin-left: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.radio-group:hover .radio-title {
+    max-width: 200px;
+    opacity: 1;
+    margin-left: 0.75rem;
+}
+
+.radio-item input:checked~.radio-icon {
+    color: var(--primary-color);
+}
+
+.radio-item input:checked~.radio-title {
+    color: var(--primary-color);
+    opacity: 1;
+    max-width: 200px;
+    margin-left: 0.75rem;
+}
+
+.radio-item::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: var(--transition);
+}
+
+.radio-item input:checked::after {
+    width: 100%;
+}
+
+.radio-item:hover .radio-icon {
+    transform: scale(1.1);
+}
